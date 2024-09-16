@@ -32,6 +32,20 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+
+	<!-- Add this block for custom fonts -->
+	<key>UIAppFonts</key>
+	<array>
+		<string>Tajawal-Regular.ttf</string>
+		<string>Tajawal-Meduim.ttf</string>
+		<string>Tajawal-Black.ttf</string>
+		<string>Tajawal-Bold.ttf</string>
+		<string>Tajawal-Light.ttf</string>
+		<string>Tajawal-ExtraLight.ttf</string>
+		<string>Tajawal-ExtraBold.ttf</string>
+		<!-- Add more variants if needed, like bold, italic, etc. -->
+	</array>
+
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>

@@ -14,6 +14,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-Task_Dokan-Task_DokanTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Task_Dokan-Task_DokanTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8A5BC9F92C972A61000D0EC1 /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BC9F22C972A61000D0EC1 /* Tajawal-Light.ttf */; };
+		8A5BC9FA2C972A61000D0EC1 /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BC9F32C972A61000D0EC1 /* Tajawal-Regular.ttf */; };
+		8A5BC9FB2C972A61000D0EC1 /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BC9F42C972A61000D0EC1 /* Tajawal-Bold.ttf */; };
+		8A5BC9FC2C972A61000D0EC1 /* Tajawal-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BC9F52C972A61000D0EC1 /* Tajawal-Black.ttf */; };
+		8A5BC9FD2C972A61000D0EC1 /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BC9F62C972A61000D0EC1 /* Tajawal-Medium.ttf */; };
+		8A5BC9FE2C972A61000D0EC1 /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BC9F72C972A61000D0EC1 /* Tajawal-ExtraLight.ttf */; };
+		8A5BC9FF2C972A61000D0EC1 /* Tajawal-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A5BC9F82C972A61000D0EC1 /* Tajawal-ExtraBold.ttf */; };
 		F5CEA8B072D521673F92C497 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 28AAB18FA807716DFC09CFEF /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -39,13 +46,20 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Task_Dokan/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Task_Dokan/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Task_Dokan-Task_DokanTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Task_Dokan-Task_DokanTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		28AAB18FA807716DFC09CFEF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Task_Dokan/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		28AAB18FA807716DFC09CFEF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Task_Dokan/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Task_Dokan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task_Dokan.debug.xcconfig"; path = "Target Support Files/Pods-Task_Dokan/Pods-Task_Dokan.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Task_Dokan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task_Dokan.release.xcconfig"; path = "Target Support Files/Pods-Task_Dokan/Pods-Task_Dokan.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Task_Dokan-Task_DokanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task_Dokan-Task_DokanTests.debug.xcconfig"; path = "Target Support Files/Pods-Task_Dokan-Task_DokanTests/Pods-Task_Dokan-Task_DokanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Task_Dokan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Task_Dokan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Task_Dokan/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Task_Dokan-Task_DokanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task_Dokan-Task_DokanTests.release.xcconfig"; path = "Target Support Files/Pods-Task_Dokan-Task_DokanTests/Pods-Task_Dokan-Task_DokanTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A5BC9F22C972A61000D0EC1 /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tajawal-Light.ttf"; path = "../../src/assets/fonts/Tajawal/Tajawal-Light.ttf"; sourceTree = "<group>"; };
+		8A5BC9F32C972A61000D0EC1 /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tajawal-Regular.ttf"; path = "../../src/assets/fonts/Tajawal/Tajawal-Regular.ttf"; sourceTree = "<group>"; };
+		8A5BC9F42C972A61000D0EC1 /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tajawal-Bold.ttf"; path = "../../src/assets/fonts/Tajawal/Tajawal-Bold.ttf"; sourceTree = "<group>"; };
+		8A5BC9F52C972A61000D0EC1 /* Tajawal-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tajawal-Black.ttf"; path = "../../src/assets/fonts/Tajawal/Tajawal-Black.ttf"; sourceTree = "<group>"; };
+		8A5BC9F62C972A61000D0EC1 /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tajawal-Medium.ttf"; path = "../../src/assets/fonts/Tajawal/Tajawal-Medium.ttf"; sourceTree = "<group>"; };
+		8A5BC9F72C972A61000D0EC1 /* Tajawal-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tajawal-ExtraLight.ttf"; path = "../../src/assets/fonts/Tajawal/Tajawal-ExtraLight.ttf"; sourceTree = "<group>"; };
+		8A5BC9F82C972A61000D0EC1 /* Tajawal-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Tajawal-ExtraBold.ttf"; path = "../../src/assets/fonts/Tajawal/Tajawal-ExtraBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -121,6 +135,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8A5BC9F12C972A50000D0EC1 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* Task_Dokan */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* Task_DokanTests */,
@@ -140,6 +155,20 @@
 				00E356EE1AD99517003FC87E /* Task_DokanTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8A5BC9F12C972A50000D0EC1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8A5BC9F52C972A61000D0EC1 /* Tajawal-Black.ttf */,
+				8A5BC9F42C972A61000D0EC1 /* Tajawal-Bold.ttf */,
+				8A5BC9F82C972A61000D0EC1 /* Tajawal-ExtraBold.ttf */,
+				8A5BC9F72C972A61000D0EC1 /* Tajawal-ExtraLight.ttf */,
+				8A5BC9F22C972A61000D0EC1 /* Tajawal-Light.ttf */,
+				8A5BC9F62C972A61000D0EC1 /* Tajawal-Medium.ttf */,
+				8A5BC9F32C972A61000D0EC1 /* Tajawal-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
@@ -246,8 +275,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A5BC9FD2C972A61000D0EC1 /* Tajawal-Medium.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				8A5BC9FA2C972A61000D0EC1 /* Tajawal-Regular.ttf in Resources */,
+				8A5BC9FF2C972A61000D0EC1 /* Tajawal-ExtraBold.ttf in Resources */,
+				8A5BC9FE2C972A61000D0EC1 /* Tajawal-ExtraLight.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8A5BC9FC2C972A61000D0EC1 /* Tajawal-Black.ttf in Resources */,
+				8A5BC9F92C972A61000D0EC1 /* Tajawal-Light.ttf in Resources */,
+				8A5BC9FB2C972A61000D0EC1 /* Tajawal-Bold.ttf in Resources */,
 				F5CEA8B072D521673F92C497 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,10 +626,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -666,10 +699,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
