@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import {COLORS} from '../../utils/colors';
 import {FS, HS, VS} from '../../utils/scaling';
 import {AppText} from '../../common/AppText/AppText';
-import SocialLogin from './componet /SocialLogin';
+import SocialLogin from './componet/SocialLogin';
 
 const LoginScreen = () => {
   return (
