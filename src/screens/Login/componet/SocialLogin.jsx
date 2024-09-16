@@ -29,7 +29,7 @@ const SocialLogin = () => {
       </View>
       <View
         style={{
-          flexDirection: 'row',
+          flexDirection: 'row-reverse',
 
           marginTop: HS(24),
           gap: 12,
@@ -67,7 +67,7 @@ const SocialLogin = () => {
             flex: 1,
           }}>
           <Image
-            source={require('../../../assets/images/google/google.png')}
+            source={require('../../../assets/images/facebook/facebook.png')}
             style={{width: HS(24), height: VS(24)}}
             resizeMode="contain"
           />
@@ -86,7 +86,7 @@ const SocialLogin = () => {
             height: VS(44),
           }}>
           <Image
-            source={require('../../../assets/images/google/google.png')}
+            source={require('../../../assets/images/apple/apple.png')}
             style={{width: HS(24), height: VS(24)}}
             resizeMode="contain"
           />

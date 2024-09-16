@@ -64,7 +64,7 @@ export const PhoneInput = ({
           editable={editable}
           keyboardType={'number-pad'}
           placeholderFillCharacter={'x'}
-          placeholder={'رقم الجوال'}
+          placeholder={'000 000 0000'}
           style={[
             styles.input,
             style,
@@ -84,29 +84,28 @@ const styles = StyleSheet.create({
   label: {
     marginBottom: 12,
   
-    color: COLORS.GRAY900,
+    color: COLORS.TEXT_SECONDARY,
   },
   input: {
-    borderColor: COLORS.GRAY100,
     marginBottom: 10,
     textAlign: 'right',
-    color: COLORS.GRAY900,
+    color: COLORS.GREY,
     paddingVertical: 14,
     height: VS(50),
     backgroundColor: '#fff',
     borderRadius: 10,
     padding: 16,
-    shadowColor: COLORS.GRAY500,
+    shadowColor: COLORS.GREY,
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0,
     shadowRadius: 4,
   },
   focusedInput: {
     borderWidth: 1.3,
-    borderColor: COLORS.BLUE400,
+    borderColor: COLORS.PRIMARY,
   },
   disabled: {
-    color: COLORS.GRAY500,
+    color: COLORS.GREY,
   },
   errorInput: {
     borderWidth: 1,
@@ -114,7 +113,7 @@ const styles = StyleSheet.create({
   },
   unfocusedInput: {
     borderWidth: 1,
-    borderColor: COLORS.GRAY100,
+    borderColor: COLORS.STROKE,
   },
   errorText: {
     color: 'red',

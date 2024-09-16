@@ -7,23 +7,31 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {COLORS} from '../../utils/colors';
-import {FS} from '../../utils/scaling';
+import {FS, VS} from '../../utils/scaling';
 import { AppText } from '../AppText/AppText';
 
 export const AppButton = ({
   title,
   ...props
 }) => (
-  <TouchableOpacity>
-    <AppText>{title}</AppText>
+  <TouchableOpacity {...props} style={styles.container}>
+    <AppText style={styles.default}>{title}</AppText>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.PRIMARY,
+    borderRadius: FS(10),
+    paddingVertical: VS(10)
+  },
   default: {
-    color: COLORS.GREY,
+    color: 'white',
     fontFamily: 'Tajawal',
-    fontWeight: 500,
-    fontSize: FS(14),
+    fontWeight: 'bold',
+    fontSize: FS(16),
   },
 });

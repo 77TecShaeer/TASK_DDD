@@ -4,8 +4,10 @@ import {COLORS} from '../../utils/colors';
 import {FS, HS, VS} from '../../utils/scaling';
 import {AppText} from '../../common/AppText/AppText';
 import SocialLogin from './componet/SocialLogin';
+import { AppButton } from '../../common/AppButton/AppButton';
+import { PhoneInput } from '../../common/PhoneInput/PhoneInput';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   return (
     <View
       style={{
@@ -48,8 +50,27 @@ const LoginScreen = () => {
           {'مرحباً بك في التطبيق الإختباري'}
         </AppText>
 
-        <View style={{backgroundColor: 'red', width: 200, height: 100 , marginVertical:30}}></View>
+        <View
+          style={{
+            width: '100%',
+            marginVertical: 30,
+            padding: 10,
+          }}>
+            <PhoneInput label='رقم الهاتف' labelStyle={{color: COLORS.TEXT_SECONDARY}}/>
+            <AppButton title={'تسجيل'} onPress={() => navigation.navigate('OTP_SCREEN')}/>
+          </View>
         <SocialLogin />
+
+        <View style={{marginTop: VS(24)}}>
+          <AppText>
+            {'معاينة '}
+            <AppText
+              onPress={() => navigation.navigate('PRIVACY_SCREEN')}
+              style={{color: COLORS.PRIMARY}}>
+              الشروط و الأحكام
+            </AppText>
+          </AppText>
+        </View>
       </View>
     </View>
   );
