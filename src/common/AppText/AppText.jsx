@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Text, StyleSheet, TextStyle, I18nManager} from 'react-native';
+import {Text, StyleSheet, TextStyle, I18nManager, Platform} from 'react-native';
 import {COLORS} from '../../utils/colors';
 import {FS} from '../../utils/scaling';
 
@@ -22,7 +22,7 @@ export const AppText = ({
 const styles = StyleSheet.create({
   default: {
     color: COLORS.GREY,
-    fontFamily: 'Tajawal',
+    fontFamily: Platform.OS == 'ios' ? 'Tajawal' : 'Tajawal-Regular',
     fontWeight: 500,
     fontSize: FS(14),
   },

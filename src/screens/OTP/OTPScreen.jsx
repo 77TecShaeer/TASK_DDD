@@ -1,15 +1,56 @@
-import {StyleSheet, View} from 'react-native';
+import {useRef, useState, useEffect} from 'react';
+import {AppState, StyleSheet, View} from 'react-native';
 import {VS, HS, sHeight, FS} from '../../utils/scaling';
 import {AppText} from '../../common/AppText/AppText';
 import {AppButton} from '../../common/AppButton/AppButton';
 import {COLORS} from '../../utils/colors';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 import {a2e} from '../../utils/Helper';
-import {useRef, useState} from 'react';
+import BackgroundTimer from 'react-native-background-timer';
 
 const OTPScreen = () => {
   const [code, setCode] = useState('');
   const otpInputRef = useRef(null);
+  const [timerValue, setTimerValue] = useState(60);
+  const [appState, setAppState] = useState(AppState.currentState);
+  const [resendOtpPressed, setResendOtpPressed] = useState(false);
+
+  // Function to start the timer
+  const startTimer = () => {
+    BackgroundTimer.runBackgroundTimer(() => {
+      setTimerValue(prevValue => (prevValue > 0 ? prevValue - 1 : 0));
+    }, 1000);
+  };
+
+  // Function to stop the timer
+  const stopTimer = () => {
+    BackgroundTimer.stopBackgroundTimer();
+  };
+
+  // Handle when resend OTP is pressed to start the timer again
+  useEffect(() => {
+    if (resendOtpPressed) {
+      setResendOtpPressed(false);
+      setTimerValue(60); // Reset timer
+      startTimer();
+    }
+  }, [resendOtpPressed]);
+
+  // Stop the timer once it reaches zero
+  useEffect(() => {
+    if (timerValue === 0) {
+      stopTimer();
+    }
+  }, [timerValue]);
+
+  useEffect(() => {
+    // Start the timer when the component mounts
+    startTimer();
+    // Clean up event listener and timer when the component unmounts
+    return () => {
+      stopTimer();
+    };
+  }, [appState]);
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
@@ -42,15 +83,24 @@ const OTPScreen = () => {
           codeInputHighlightStyle={{borderColor: COLORS.PRIMARY}}
           code={code}
         />
-        <AppText>{'00:15'}</AppText>
+        {timerValue > 0 && (
+          <AppText style={styles.timerText}>
+            {`0${Math.floor(timerValue / 60)}`}:
+            {timerValue % 60 < 10 ? `0${timerValue % 60}` : timerValue % 60}
+          </AppText>
+        )}
       </View>
       <View style={styles.bottomView}>
-        <AppText>
-          {'لم تحصل على رمز؟ '}
-          <AppText style={{color: COLORS.PRIMARY}}>
-            {'أرسل الرمز مجدداً'}
+        {timerValue <= 0 && (
+          <AppText style={{marginBottom: VS(10)}}>
+            {'لم تحصل على رمز؟ '}
+            <AppText
+              style={{color: COLORS.PRIMARY, fontFamily: 'Tajawal-Bold'}}
+              onPress={() => setResendOtpPressed(true)}>
+              {'أرسل الرمز مجدداً'}
+            </AppText>
           </AppText>
-        </AppText>
+        )}
         <AppButton title={'التحقق من الرمز'} />
       </View>
     </View>
@@ -67,6 +117,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: VS(16),
+    paddingBottom: VS(45),
     paddingHorizontal: HS(24),
     backgroundColor: 'white',
     gap: VS(12),

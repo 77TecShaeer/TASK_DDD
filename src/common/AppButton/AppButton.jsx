@@ -5,6 +5,7 @@ import {
   TextStyle,
   I18nManager,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import {COLORS} from '../../utils/colors';
 import {FS, VS} from '../../utils/scaling';
@@ -12,9 +13,10 @@ import { AppText } from '../AppText/AppText';
 
 export const AppButton = ({
   title,
+  style,
   ...props
 }) => (
-  <TouchableOpacity {...props} style={styles.container}>
+  <TouchableOpacity {...props} style={[styles.container, style]}>
     <AppText style={styles.default}>{title}</AppText>
   </TouchableOpacity>
 );
@@ -30,8 +32,8 @@ const styles = StyleSheet.create({
   },
   default: {
     color: 'white',
-    fontFamily: 'Tajawal',
-    fontWeight: 'bold',
+    fontFamily: Platform.OS == 'ios' ? 'Tajawal' : 'Tajawal-Bold',
+    fontWeight: Platform.OS == 'ios' ? 'bold' : 'normal',
     fontSize: FS(16),
   },
 });

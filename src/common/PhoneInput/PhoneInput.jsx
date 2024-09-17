@@ -5,13 +5,13 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   Keyboard,
+  Image,
 } from 'react-native';
-
-
-import { a2e } from '../../utils/Helper';
-import { AppText } from '../AppText/AppText';
-import { COLORS } from '../../utils/colors';
-import { VS } from '../../utils/scaling';
+import CountryPicker from 'react-native-country-picker-modal';
+import {a2e} from '../../utils/Helper';
+import {AppText} from '../AppText/AppText';
+import {COLORS} from '../../utils/colors';
+import {HS, VS} from '../../utils/scaling';
 
 const formatPhoneNumber = input => {
   if (!input) return '';
@@ -42,9 +42,14 @@ export const PhoneInput = ({
   labelStyle,
   multiline,
   onBlur,
+  imageSource, // New prop for image source
   ...inputProps
 }) => {
   const [isFocused, setIsFocused] = useState(false);
+  const [country, setCountry] = useState({
+    cca2: 'SA',
+    name: 'Saudi Arabia',
+  });
   const handleFocus = () => setIsFocused(true);
   const handleBlur = () => setIsFocused(false);
 
@@ -52,28 +57,44 @@ export const PhoneInput = ({
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={containerStyle}>
         {label && <AppText style={[styles.label, labelStyle]}>{label}</AppText>}
-        <TextInput
-          value={String(formatPhoneNumber(value))}
-          defaultValue={defaultValue}
-          onChangeText={text => handleChangeText(a2e(text).replace(/\-/g, ''))}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          maxLength={__DEV__ ? 14 : 12}
-          multiline={multiline}
-          placeholderTextColor={COLORS.PLACE_HOLDER}
-          editable={editable}
-          keyboardType={'number-pad'}
-          placeholderFillCharacter={'x'}
-          placeholder={'000 000 0000'}
+        <View
           style={[
-            styles.input,
-            style,
+            styles.inputContainer,
             isFocused ? styles.focusedInput : styles.unfocusedInput,
-            !editable ? styles.disabled : {},
-            error ? styles.errorInput : {},
-          ]}
-          {...inputProps}
-        />
+            style,
+          ]}>
+          {imageSource && (
+            <CountryPicker
+              withFilter // Enable search filter
+              withFlag // Display the flag
+              onSelect={country => setCountry(country)}
+              countryCode={country?.cca2}
+              visible={false}
+            />
+          )}
+          <TextInput
+            value={String(formatPhoneNumber(value))}
+            defaultValue={defaultValue}
+            onChangeText={text =>
+              handleChangeText(a2e(text).replace(/\-/g, ''))
+            }
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            maxLength={__DEV__ ? 14 : 12}
+            multiline={multiline}
+            placeholderTextColor={COLORS.PLACE_HOLDER}
+            editable={editable}
+            keyboardType={'number-pad'}
+            placeholder={'000 000 0000'}
+            style={[
+              styles.input,
+              style,
+              !editable ? styles.disabled : {},
+              error ? styles.errorInput : {},
+            ]}
+            {...inputProps}
+          />
+        </View>
         {error && <AppText style={styles.errorText}>{error}</AppText>}
       </View>
     </TouchableWithoutFeedback>
@@ -83,22 +104,29 @@ export const PhoneInput = ({
 const styles = StyleSheet.create({
   label: {
     marginBottom: 12,
-  
     color: COLORS.TEXT_SECONDARY,
   },
-  input: {
-    marginBottom: 10,
-    textAlign: 'right',
-    color: COLORS.GREY,
-    paddingVertical: 14,
-    height: VS(50),
+  inputContainer: {
+    flexDirection: 'row', // Row layout to have image beside TextInput
+    alignItems: 'center',
     backgroundColor: '#fff',
     borderRadius: 10,
-    padding: 16,
     shadowColor: COLORS.GREY,
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0,
     shadowRadius: 4,
+    paddingHorizontal: HS(6),
+  },
+  image: {
+    width: 24,
+    height: 24,
+    marginRight: 10, // Add some space between the image and input
+  },
+  input: {
+    flex: 1, // Take up remaining space after image
+    textAlign: 'right',
+    color: COLORS.GREY,
+    // height: VS(50),
   },
   focusedInput: {
     borderWidth: 1.3,
