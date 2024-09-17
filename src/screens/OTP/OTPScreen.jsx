@@ -31,6 +31,7 @@ const OTPScreen = () => {
   useEffect(() => {
     if (resendOtpPressed) {
       setResendOtpPressed(false);
+      setCode('')
       setTimerValue(60); // Reset timer
       startTimer();
     }
@@ -51,6 +52,12 @@ const OTPScreen = () => {
       stopTimer();
     };
   }, [appState]);
+
+  useEffect(() => {
+    if (code.length === 4) {
+      setTimerValue(0); // Reset timer
+    }
+  }, [code]);
 
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>

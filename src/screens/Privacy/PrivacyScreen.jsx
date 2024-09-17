@@ -1,10 +1,12 @@
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {Dimensions, ScrollView, StyleSheet, View} from 'react-native';
 import {AppText} from '../../common/AppText/AppText';
 import {AppButton} from '../../common/AppButton/AppButton';
 import {FS, HS, VS} from '../../utils/scaling';
 import {COLORS} from '../../utils/colors';
 import CheckBox from '@react-native-community/checkbox';
 import {useState} from 'react';
+
+const {height} = Dimensions.get('window');
 
 const PrivacyScreen = () => {
   const [toggleCheckBox, setToggleCheckBox] = useState(false);
@@ -28,8 +30,8 @@ const PrivacyScreen = () => {
           {'أهلاً وسهلاً بك في التطبيق الإختياري'}
         </AppText>
 
-        <ScrollView>
-          <AppText style={{fontSize: FS(16), marginBottom: VS(400)}}>
+        <ScrollView style={{height: height * 0.51}}>
+          <AppText style={{fontSize: FS(16)}}>
             {
               'لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت … لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت … وريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت … لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت … لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص بالتصاميم سواء كانت تصاميم مطبوعه … بروشور او فلاير على سبيل المثال … او نماذج مواقع انترنت …'
             }
@@ -90,8 +92,8 @@ const styles = StyleSheet.create({
     fontSize: FS(12),
   },
   bottomView: {
-    position: 'absolute',
-    bottom: 0,
+    // position: 'absolute',
+    // bottom: 0,
     width: '100%',
     height: VS(128),
     alignItems: 'center',
