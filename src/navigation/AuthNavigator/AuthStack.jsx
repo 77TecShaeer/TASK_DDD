@@ -40,7 +40,9 @@ function AuthStack() {
         component={OTPScreen}
         options={{
           title: 'كود التحقق',
-          headerLeft: () => <BackButton />
+         
+          headerTitleAlign:'left',
+          headerLeft: () => <BackButton />,
         }}
       />
       <Stack.Screen
@@ -48,7 +50,9 @@ function AuthStack() {
         component={PrivacyScreen}
         options={{
           title: 'شروط وسياسة الاستخدام',
-          headerLeft: () => <BackButton />
+          headerTitleAlign:'left',
+         
+          headerLeft: () => <BackButton />,
         }}
       />
     </Stack.Navigator>

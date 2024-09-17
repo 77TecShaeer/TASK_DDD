@@ -63,15 +63,14 @@ export const PhoneInput = ({
             isFocused ? styles.focusedInput : styles.unfocusedInput,
             style,
           ]}>
-          {imageSource && (
-            <CountryPicker
-              withFilter // Enable search filter
-              withFlag // Display the flag
-              onSelect={country => setCountry(country)}
-              countryCode={country?.cca2}
-              visible={false}
-            />
-          )}
+          <CountryPicker
+            withFilter // Enable search filter
+            withFlag // Display the flag
+            onSelect={country => setCountry(country)}
+            countryCode={country?.cca2}
+            visible={false}
+          />
+
           <TextInput
             value={String(formatPhoneNumber(value))}
             defaultValue={defaultValue}

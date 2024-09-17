@@ -1,5 +1,15 @@
-import React, { useState } from 'react';
-import {View, Text, StyleSheet, Image, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
+  Platform,
+} from 'react-native';
 import {COLORS} from '../../utils/colors';
 import {FS, HS, VS} from '../../utils/scaling';
 import {AppText} from '../../common/AppText/AppText';
@@ -63,30 +73,44 @@ const LoginScreen = ({navigation}) => {
             }}>
             <PhoneInput
               label="رقم الهاتف"
-              imageSource={require('../../assets/images/saudi-flag/saudi-flag.png')}
-              labelStyle={{color: COLORS.TEXT_SECONDARY}}
+              labelStyle={{
+                color: COLORS.TEXT_SECONDARY,
+                fontWeight: '400',
+                textAlign: 'left',
+              }}
               value={phone}
-              handleChangeText={(text) => setPhone(text)}
+              style={{height: HS(48)}}
+              handleChangeText={text => setPhone(text)}
             />
             <View
               style={{
                 flexDirection: 'row',
-                alignItems: 'center',
-                marginTop: VS(4),
-                marginBottom: VS(8),
+                alignItems: 'flex-end',
+                // backgroundColor:'red',
+                marginTop: VS(16),
+                marginBottom: VS(24),
               }}>
               <CheckBox
                 disabled={false}
                 tintColors={{true: COLORS.PRIMARY, false: COLORS.STROKE}}
-                style={{borderRadius: 20}}
+                style={{
+                  borderRadius: 20,
+                  width: HS(18),
+                  height: HS(18),
+                }}
                 value={toggleCheckBox}
+                boxType="square"
+                onTintColor={COLORS.PRIMARY}
+                onFillColor={COLORS.PRIMARY}
+                onCheckColor="white"
                 onValueChange={newValue => setToggleCheckBox(newValue)}
               />
               <AppText
                 style={{
                   color: COLORS.TEXT_SECONDARY,
                   fontSize: FS(12),
-                  fontFamily: 'Tajawal-Medium',
+                  fontFamily: 'Tajawal',
+                  fontWeight: '500',
                   marginStart: HS(8),
                 }}>
                 {'تذكرني'}
@@ -94,20 +118,40 @@ const LoginScreen = ({navigation}) => {
             </View>
             <AppButton
               title={'تسجيل'}
-              onPress={() => navigation.navigate('OTP_SCREEN')}
+              onPress={() =>
+                navigation.navigate('OTP_SCREEN', {
+                  phoneNumber: phone,
+                })
+              }
             />
           </View>
           <SocialLogin />
 
           <View style={{marginTop: VS(24)}}>
-            <AppText>
-              {'معاينة '}
+            <View
+              style={{
+                flexDirection: 'row',
+                alignSelf: 'center',
+              }}>
+              <AppText
+                style={{
+                  color: COLORS.TEXT_SECONDARY,
+                  fontSize: FS(12),
+                  fontFamily: 'Tajawal',
+                  fontWeight: '400',
+                }}>
+                {'معاينة '}
+              </AppText>
               <AppText
                 onPress={() => navigation.navigate('PRIVACY_SCREEN')}
-                style={{color: COLORS.PRIMARY}}>
+                style={{
+                  color: COLORS.PRIMARY,
+                  marginHorizontal: HS(6),
+                  fontWeight: '700',
+                }}>
                 الشروط و الأحكام
               </AppText>
-            </AppText>
+            </View>
           </View>
         </View>
       </View>

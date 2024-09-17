@@ -1,6 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Image, TouchableOpacity, View} from 'react-native';
-import {HS, VS} from '../../../utils/scaling';
+import {FS, HS, VS} from '../../../utils/scaling';
 import {COLORS} from '../../../utils/colors';
 import {AppText} from '../../../common/AppText/AppText';
 
@@ -13,10 +14,15 @@ const SocialLogin = () => {
             height: 1,
             backgroundColor: COLORS.STROKE,
             width: HS(57),
-          }}></View>
+          }} />
         <AppText
           style={{
             marginHorizontal: HS(16),
+            color: COLORS.TEXT_SECONDARY,
+            fontSize: FS(12),
+            fontFamily: 'Tajawal',
+            fontWeight: '400',
+            marginStart: HS(8),
           }}>
           أو تسجيل الدخول بواسطة
         </AppText>
@@ -25,7 +31,7 @@ const SocialLogin = () => {
             height: 1,
             backgroundColor: COLORS.STROKE,
             width: HS(57),
-          }}></View>
+          }} />
       </View>
       <View
         style={{

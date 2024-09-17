@@ -8,7 +8,9 @@ import OTPInputView from '@twotalltotems/react-native-otp-input';
 import {a2e} from '../../utils/Helper';
 import BackgroundTimer from 'react-native-background-timer';
 
-const OTPScreen = () => {
+const OTPScreen = props => {
+  // console.log();
+
   const [code, setCode] = useState('');
   const otpInputRef = useRef(null);
   const [timerValue, setTimerValue] = useState(60);
@@ -31,7 +33,7 @@ const OTPScreen = () => {
   useEffect(() => {
     if (resendOtpPressed) {
       setResendOtpPressed(false);
-      setCode('')
+      setCode('');
       setTimerValue(60); // Reset timer
       startTimer();
     }
@@ -62,10 +64,14 @@ const OTPScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: 'white'}}>
       <View style={{alignItems: 'center', paddingHorizontal: HS(24)}}>
-        <AppText>
-          {
-            'الرجاء إدخال الرمز المكوّن من 5 أرقام الذي تم إرساله إلى الرقم 0000000000 .'
-          }
+        <AppText
+          style={{
+            textAlign: 'left',
+            marginTop: HS(16),
+            fontWeight: '400',
+          }}>
+          {'الرجاء إدخال الرمز المكوّن من 5 أرقام الذي تم إرساله إلى الرقم  .' +
+            props.route.params.phoneNumber}
         </AppText>
         <OTPInputView
           ref={otpInputRef}
@@ -99,7 +105,7 @@ const OTPScreen = () => {
       </View>
       <View style={styles.bottomView}>
         {timerValue <= 0 && (
-          <AppText style={{marginBottom: VS(10)}}>
+          <AppText style={{marginBottom: VS(10), fontWeight: '400'}}>
             {'لم تحصل على رمز؟ '}
             <AppText
               style={{color: COLORS.PRIMARY, fontFamily: 'Tajawal-Bold'}}

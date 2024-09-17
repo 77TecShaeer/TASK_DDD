@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, {FC} from 'react';
 import {Text, StyleSheet, TextStyle, I18nManager, Platform} from 'react-native';
 import {COLORS} from '../../utils/colors';
@@ -25,5 +26,6 @@ const styles = StyleSheet.create({
     fontFamily: Platform.OS == 'ios' ? 'Tajawal' : 'Tajawal-Regular',
     fontWeight: 500,
     fontSize: FS(14),
+    textAlign: 'left',
   },
 });
